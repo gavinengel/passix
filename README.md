@@ -2,7 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/passix.svg)](http://badge.fury.io/js/passix)
  
-Hash a string into 6-char base64 for appending to a password.  Uses pbkdf2 as hash algorithm, and your ssh private key as a salt.
+Hash a string into 6-char base64 for appending to a password.  Uses pbkdf2 as hash algorithm, and your ssh private key *and* the current year as a salt.
+
+TODO display last years hash as well
 
 ## What problem does `passix` solve?
 Using secure passwords for various websites can be tricky.  Instead of writing down passwords, which is insecure, you could instead commit to memory a single baseword and use this module to generate a suffix for every website.

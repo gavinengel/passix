@@ -11,7 +11,9 @@ var out = console.log
 var target = ''
 require('copy-paste').global() 
 var pash = require('pash')
- 
+var date = new Date()
+var year = date.getFullYear()
+
 // get private key (the salt)
 salts = rawSalt.split(/\n/)
 salts.forEach(function(each) {
@@ -19,6 +21,7 @@ salts.forEach(function(each) {
     salt = salt + each
   }
 })
+salt = salt + year
 
 // gather passed string to hash
 target = process.argv.pop()
@@ -29,7 +32,7 @@ pash(target, salt, function(raw) {
 
   // save hash to clipboard
   copy(hash)
-  out('copied hash for `' + target + '`: ' + hash)
+  out('copied ' + year + '\'s hash for `' + target + '`: ' + hash)
   process.exit()
 });
 
