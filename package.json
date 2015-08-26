@@ -1,0 +1,27 @@
+{
+  "name": "passix",
+  "version": "0.0.1",
+  "description": "hash a string into 6-char base64 for appending to a password, perhaps yearly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinengel/passix.git"
+  },
+  "keywords": [],
+  "author": "Gavin Engel <gavin@engel.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gavinengel/passix/issues"
+  },
+  "homepage": "https://github.com/gavinengel/passix#readme",
+  "dependencies": {
+    "copy-paste": "1.*",
+    "pash": "0.*"
+  },
+  "bin": {
+    "passix": "./index.js"
+  }
+}
