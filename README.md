@@ -32,7 +32,7 @@ This is how I install CLI tools from npm (like passix) without sudo:
 ## Usage
 ```
 $ passix gmail.com
-copied hash for `gmail.com`: tU68/+
+copied 2015's hash for `gmail.com`: tU68/+
 ```
 
 ## Credits
