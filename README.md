@@ -11,6 +11,6 @@ this means you can use a single `base password`
 64^6 = 68,719,476,736 so it makes each password very difficult to "guess"
 
 ```
-$ passix gmail.com                                                                                                               
+$ passix gmail.com                                                                                              
 copied hash for `gmail.com`: tU68/+
 ```
