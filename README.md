@@ -1,38 +1,44 @@
-# passix
+# halfpass.js
 
-[![npm version](https://badge.fury.io/js/passix.svg)](http://badge.fury.io/js/passix)
+[![npm version](https://badge.fury.io/js/halfpass.svg)](http://badge.fury.io/js/halfpass)
  
-Hash a string into 6-char base64 for appending to a password.  Uses pbkdf2 as hash algorithm, and your ssh private key *and* the current year as a salt.
+Create a 4+ char string for appending to a password.  Uses pbkdf2 as hash algorithm, and your ssh private key *and* the current year as a salt.  Can also display last years hash as well, in case you need to recover an old password.
 
-TODO display last years hash as well
+## What problem does `halfpass` solve?
+Using secure passwords for various websites can be tricky.  Instead of writing down passwords, which is insecure, you could instead commit to memory a single baseword and use this module to generate a yearly suffix for every website.
 
-## What problem does `passix` solve?
-Using secure passwords for various websites can be tricky.  Instead of writing down passwords, which is insecure, you could instead commit to memory a single baseword and use this module to generate a suffix for every website.
-
-* example: your password baseword is `foobarbaz`, and this year's gmail.com append is: tU68/+, final password is: `foobarbaztU68/+`,
-
-this means you can use a single `base password`
-
-64^6 = 68,719,476,736 so it makes each password very difficult to "guess"
+* example: your password baseword is `foobarbaz`, and this year's gmail.com append is: `tU6+`, final password is: `foobarbaztU6+`,
 
 ## Installing 
 The lazy approach to installing this requires sudo (root) access:
 ```
-  sudo npm install -g passix
+  sudo npm install -g halfpass
 ```
 
 Of course, I do not recommend installing npm packages with sudo unless it's required.
 
-This is how I install CLI tools from npm (like passix) without sudo:
+This is how I install CLI tools from npm (like halfpass) without sudo:
 
 1. perform these steps: [https://gist.github.com/gavinengel/1842179837823dc25730](https://gist.github.com/gavinengel/1842179837823dc25730)
 2. $ nodebin
-3. $ npm install --save passix
+3. $ npm install --save halfpass
 
 ## Usage
 ```
-$ passix gmail.com
-copied 2015's hash for `gmail.com`: tU68/+
+$ halfpass gmail.com
+copied 2015's hash for `gmail.com`: tU6+
+```
+
+or if you want a few extra base64 chars appended for security:
+```
+$ halfpass gmail.com -a=3
+copied 2015's hash for `gmail.com`: tU6+h*a
+```
+
+or if you want a previous year's hash:
+```
+$ halfpass gmail.com -y=2014
+copied 201y's hash for `gmail.com`: H2s*
 ```
 
 ## Credits
